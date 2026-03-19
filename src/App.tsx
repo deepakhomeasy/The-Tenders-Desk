@@ -14,6 +14,7 @@ import Services1 from "./Services";
 import Tenders from "./pages/Tenders";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
 
 function Home() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
        <Route path="/tenders" element={<Tenders />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <CTA />
       <Footer />

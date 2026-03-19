@@ -19,23 +19,23 @@ const navLinks: NavLink[] = [
   {
     label: "Services",
     href: "/services",
-    dropdown: [
-      { label: "Tender Filing", href: "/services/tender-filing" },
-      { label: "Portal Registration", href: "/services/portal-registration" },
-      { label: "Contractor Registration", href: "/services/contractor-registration" },
-      { label: "Digital Signature (DSC)", href: "/services/digital-signature" },
-    ],
+    // dropdown: [
+    //   { label: "Tender Filing", href: "/services/tender-filing" },
+    //   { label: "Portal Registration", href: "/services/portal-registration" },
+    //   { label: "Contractor Registration", href: "/services/contractor-registration" },
+    //   { label: "Digital Signature (DSC)", href: "/services/digital-signature" },
+    // ],
   },
 
   {
     label: "Live Tenders",
     href: "/tenders",
-    dropdown: [
-      { label: "Live Tenders", href: "/tenders/live" },
-      { label: "Tender Results", href: "/tenders/results" },
-      { label: "Latest Opportunities", href: "/tenders/opportunities" },
-      { label: "Government Tenders", href: "/tenders/government" },
-    ],
+    // dropdown: [
+    //   { label: "Live Tenders", href: "/tenders/live" },
+    //   { label: "Tender Results", href: "/tenders/results" },
+    //   { label: "Latest Opportunities", href: "/tenders/opportunities" },
+    //   { label: "Government Tenders", href: "/tenders/government" },
+    // ],
   },
 
   { label: "Contact Us", href: "/contact" },

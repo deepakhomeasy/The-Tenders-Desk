@@ -66,7 +66,7 @@ export default function Platform() {
           </div>
 
           {/* BUTTON */}
-          {/* <button
+          <button
             onClick={() => {
               navigate("/tenders");
               window.scrollTo(0, 0);
@@ -74,7 +74,7 @@ export default function Platform() {
             className="mt-4 w-full py-2.5 rounded-lg font-bold bg-yellow-400 text-[#0a192f] hover:opacity-90"
           >
             Explore Platform →
-          </button> */}
+          </button>
         </div>
 
         {/* 👉 RIGHT - TEXT */}
@@ -116,7 +116,7 @@ export default function Platform() {
           </ul>
 
           {/* MAIN CTA */}
-          <button
+          {/* <button
             onClick={() => {
               navigate("/tenders");
               window.scrollTo(0, 0);
@@ -124,7 +124,7 @@ export default function Platform() {
             className="px-8 py-4 rounded-xl font-bold bg-yellow-400 text-[#0a192f]"
           >
             Explore Platform →
-          </button>
+          </button> */}
         </div>
 
       </div>

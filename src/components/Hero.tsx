@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import tenderImg from "../assests/tender.png";
 
 export default function Hero() {
   const [tenders, setTenders] = useState<any[]>([]);
@@ -20,7 +21,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-16 bg-[#0a192f]">
+    <section className="relative overflow-hidden min-h-[90vh] flex items-center bg-[#0a192f]">
       
       {/* Glow */}
       <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-yellow-400 to-transparent blur-3xl" />
@@ -29,17 +30,17 @@ export default function Hero() {
 
         {/* LEFT */}
         <div className="space-y-6">
-          <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-10">
             Win More Government Contracts with{" "}
-            <span className="text-yellow-400">Smart Tender Intelligence</span>
+            <span className="text-yellow-400 mb-5">Smart Tender Intelligence</span>
           </h1>
 
-          <p className="text-slate-300 text-lg">
+          <p className="text-slate-300 text-lg pb-10">
             Real-time tenders, bid strategy & consultancy — all in one platform.
           </p>
 
           <div className="flex gap-4">
-            <button className="bg-yellow-400 text-[#0a192f] px-6 py-3 rounded-xl font-bold">
+            <button className="bg-yellow-400 text-[#0a192f] px-8 py-5 rounded-xl font-bold">
               Get Started
             </button>
 
@@ -49,65 +50,69 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT - LIVE TENDERS */}
-        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-5 shadow-xl">
 
-          {/* Header */}
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-white font-bold text-sm">
-              🔴 Live Tenders
-            </h2>
-            <span className="text-xs text-green-400">Updated Now</span>
-          </div>
+        {/* RIGHT - IMAGE SHOWCASE */}
+<div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-5 shadow-xl">
 
-          {/* LIST */}
-          <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+  {/* Header */}
+  {/* <div className="flex justify-between items-center mb-4">
+    <h2 className="text-white font-bold text-sm">
+      🔴 Live Tenders
+    </h2>
+    <span className="text-xs text-green-400 animate-pulse">
+      Updated Now
+    </span>
+  </div> */}
 
-            {loading && (
-              <p className="text-slate-400 text-sm">Loading...</p>
-            )}
+  {/* IMAGE CARD */}
+  <div className="relative w-full h-[300px] rounded-xl overflow-hidden group cursor-pointer">
 
-            {!loading && tenders.length === 0 && (
-              <p className="text-slate-400 text-sm">No tenders found</p>
-            )}
+    {/* Background Image */}
+    <img
+      src={tenderImg}   // 👉 public folder
+      alt="Tender"
+      className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+    />
 
-            {!loading &&
-              tenders.map((t, i) => (
-                <div
-                  key={i}
-                  className="p-3 rounded-lg bg-[#0f172a] border border-white/10 hover:border-yellow-400 transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <p className="text-sm text-white font-semibold line-clamp-2">
-                    {t.description}
-                  </p>
+    {/* Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                  <p className="text-xs text-slate-400 mt-1">
-                    Ref: {t.referenceNo}
-                  </p>
+    {/* Animated Content */}
+    <div className="absolute bottom-0 p-4 w-full translate-y-4 group-hover:translate-y-0 transition duration-500">
+      <h3 className="text-white font-bold text-lg">
+        Explore Latest Tenders
+      </h3>
+      <p className="text-slate-300 text-xs opacity-0 group-hover:opacity-100 transition duration-500">
+        Click below to view all government tenders
+      </p>
+    </div>
 
-                  <div className="flex justify-between text-xs text-slate-400 mt-1">
-                    <span className="truncate max-w-[60%]">
-                      {t.department}
-                    </span>
-                    <span className="text-yellow-400 font-medium">
-                      {t.endDate}
-                    </span>
-                  </div>
-                </div>
-              ))}
-          </div>
+    {/* Shine Effect */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shine_1.5s_linear]" />
+  </div>
 
-          {/* BUTTON */}
-          <button
-            onClick={() => {
-              navigate("/tenders");
-              window.scrollTo(0, 0);
-            }}
-            className="mt-4 w-full py-2.5 rounded-lg font-bold bg-yellow-400 text-[#0a192f] hover:opacity-90"
-          >
-            View All Tenders →
-          </button>
-        </div>
+  {/* IMAGE BUTTON */}
+  {/* <div
+    onClick={() => {
+      navigate("/tenders");
+      window.scrollTo(0, 0);
+    }}
+    className="relative mt-4 w-full h-[70px] rounded-xl overflow-hidden cursor-pointer group"
+  >
+    <img
+      src="/button.jpg"   // 👉 public folder
+      alt="View Tenders"
+      className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+    />
+
+    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 flex items-center justify-center transition duration-300">
+      <span className="text-white font-bold text-sm tracking-wide group-hover:scale-105 transition">
+        View All Tenders →
+      </span>
+    </div>
+  </div> */}
+
+</div>
       </div>
     </section>
   );
